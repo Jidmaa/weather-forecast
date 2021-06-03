@@ -1,6 +1,6 @@
 :root {
   --primary:  #E3F6FE;
-  --secondary: #4F6796;
+  --secondary: #202C5B;
   --text: #4F6796
 }
 body {
@@ -18,16 +18,29 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.primary {
+  color: var(--primary)
+}
+.secondary  {
+  color :var(--secondary); 
+}
+.light-text {
+  font-weight: 400;
+}
 .main_frame {
   display: flex;
   height: 100vh;
   justify-content: space-around;
+
+
 }
 .left_side {
   width: 70%;
   padding: 2rem 4rem;
   background-color: var(--primary);
- 
+ display: flex;
+ flex-direction: column;
+
 }
 .right_side {
   width: 30%;
@@ -54,11 +67,12 @@ code {
   padding: 0 2rem;  
 }
 .search-bar {
-  position: absolute;
+  position: relative;
+  width: min-content;
 }
 .search-icon {
-  font-size: 1.2rem;
-  position: absolute;
-  right: 90%;
-  bottom: 30%;
+
+  position: relative;
+bottom: 48%;
+left: 2%;
 }
