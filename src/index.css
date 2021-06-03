@@ -56,6 +56,7 @@ ul {
   width: 30%;
   background-color: var(--secondary);
   padding : 2rem 4rem;
+  display: flex;
 }
 @media only screen and (max-width: 630px) {
   .main_frame{

@@ -1,4 +1,9 @@
-export default function AutoComplete({ suggestedCities, hint }) {
+export default function AutoComplete({
+  suggestedCities,
+  hint,
+  setCurrentLocation,
+  setSuggestedCities,
+}) {
   let regionNames = new Intl.DisplayNames(["en"], { type: "region" });
 
   return (
@@ -8,7 +13,10 @@ export default function AutoComplete({ suggestedCities, hint }) {
           <ul>
             {suggestedCities.map((city, index) => (
               <li
-                onClick={() => console.log("clicked!")}
+                onClick={() => {
+                  setCurrentLocation({ lon: city.lon, lat: city.lat });
+                  setSuggestedCities([]);
+                }}
                 key={index}
                 className="suggestion-item"
               >

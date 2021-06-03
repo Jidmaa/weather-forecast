@@ -3,10 +3,11 @@ import { useState } from "react";
 import { getCityByName } from "../API/open_weather.instance";
 import AutoComplete from "./AutoComplete";
 
-export default function SearchBar() {
+export default function SearchBar({ setCurrentLocation, currentLocation }) {
   const [suggestedCities, setSuggestedCities] = useState([]);
   const [hint, setHint] = useState(null);
   const validateInput = (e) => {
+    // A query that has less than three characters is invalid in Openweathermap API
     if (e.target.value.length < 3) {
       setHint("Write at least three letters");
       setSuggestedCities([]);
@@ -27,7 +28,12 @@ export default function SearchBar() {
         />
         <BiSearchAlt className="search-icon" />
       </div>
-      <AutoComplete suggestedCities={suggestedCities} hint={hint} />
+      <AutoComplete
+        suggestedCities={suggestedCities}
+        hint={hint}
+        setCurrentLocation={setCurrentLocation}
+        setSuggestedCities={setSuggestedCities}
+      />
     </>
   );
 }

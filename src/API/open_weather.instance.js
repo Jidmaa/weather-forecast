@@ -1,12 +1,12 @@
 import axios from "axios";
-export const getWeather = () => {
+export const getWeather = (lat, lon) => {
   return axios
     .get(
-      `https://api.openweathermap.org/data/2.5/onecall?lat=28&lon=3&exclude=minutely&lang=fr&appid=${process.env.REACT_APP_WEATHER_API_KEY}`
+      `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&exclude=minutely&appid=${process.env.REACT_APP_WEATHER_API_KEY}`
     )
     .then((res) => {
-      console.log(res);
-      return res;
+      console.log(res.data);
+      return res.data;
     });
 };
 export const getCityByName = (city) => {
