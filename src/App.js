@@ -1,12 +1,15 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { getWeather, getCityByName } from "./API/open_weather.instance";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import SearchBar from "./Components/SearchBar";
 function App() {
+  getCityByName("Africa");
   return (
     <>
       <div className="main_frame">
-        <div className="left_side"></div>
+        <div className="left_side">
+          <SearchBar />
+        </div>
         <div className="right_side"></div>
       </div>
 

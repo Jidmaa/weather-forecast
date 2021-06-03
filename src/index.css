@@ -5,11 +5,13 @@
 }
 body {
   margin: 0;
+  box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
 }
 
 code {
@@ -23,11 +25,14 @@ code {
 }
 .left_side {
   width: 70%;
+  padding: 2rem 4rem;
   background-color: var(--primary);
+ 
 }
 .right_side {
   width: 30%;
   background-color: var(--secondary);
+  padding : 2rem 4rem;
 }
 @media screen and (max-width: 480px) {
   .main_frame{
@@ -36,9 +41,24 @@ code {
   .left_side {
     height: 60vh;
     width: unset;
+    padding: 2rem 0;
   }
   .right_side{
     height: 40vh;
     width: unset;
   }
+}
+.search {
+  height: 3rem;
+  border: unset;
+  padding: 0 2rem;  
+}
+.search-bar {
+  position: absolute;
+}
+.search-icon {
+  font-size: 1.2rem;
+  position: absolute;
+  right: 90%;
+  bottom: 30%;
 }
