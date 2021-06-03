@@ -1,11 +1,10 @@
 import "./App.css";
-import { getWeather, getCityByName } from "./API/open_weather.instance";
+import { useState, useEffect } from "react";
 import Map from "./Components/Map";
 import SearchBar from "./Components/SearchBar";
 import PopularCities from "./Components/PopularCities";
 import WeatherState from "./Components/WeatherState";
 function App() {
-  getCityByName("Africa");
   return (
     <>
       <div className="main_frame">

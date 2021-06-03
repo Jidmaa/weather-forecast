@@ -12,7 +12,7 @@ export const getWeather = () => {
 export const getCityByName = (city) => {
   return axios
     .get(
-      `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${process.env.REACT_APP_WEATHER_API_KEY}`
+      `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=3&appid=${process.env.REACT_APP_WEATHER_API_KEY}`
     )
     .then((res) => {
       console.log(res.data);

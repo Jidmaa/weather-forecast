@@ -3,6 +3,7 @@
   --secondary: #202C5B;
   --text: #4F6796
 }
+
 body {
   margin: 0;
   box-sizing: border-box;
@@ -11,9 +12,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+
   font-size: 16px;
 }
-
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -37,9 +42,8 @@ ul {
   display: flex;
   height: 100vh;
   justify-content: space-around;
-
-
 }
+
 .left_side {
   width: 70%;
   padding: 2rem 4rem;
@@ -53,14 +57,14 @@ ul {
   background-color: var(--secondary);
   padding : 2rem 4rem;
 }
-@media screen and (max-width: 480px) {
+@media only screen and (max-width: 630px) {
   .main_frame{
     flex-direction: column;
   }
   .left_side {
     height: 60vh;
     width: unset;
-    padding: 2rem 0;
+    padding: 2rem 1rem;
   }
   .right_side{
     height: 40vh;
@@ -70,29 +74,30 @@ ul {
 .search {
   height: 3rem;
   border: unset;
-  width: 26rem;
   padding: 0 2rem;  
+  width: 100%;
 }
+
 .search-bar {
   position: relative;
-  display: inline-flex;
-  width: min-content;
+  width: 100%;
+  display: inline-block;
 }
 .search-icon {
   position: relative;
-
-  top: 35%;
-  right: 96%;
+  top: -2rem;
+  right: -0.5rem;
 }
 .suggestion-item{
   background-color: var(--secondary);
   color: white;
   padding: 0 2rem;
   border-bottom: 0.5px solid white;
-  width: 26rem;
+  width: 100%;
   height: 3rem;
   display: flex;
   align-items: center;
+  margin-top: -1.2rem;
 }
 .suggestion-item:hover{
   opacity: 0.5;
