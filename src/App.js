@@ -3,6 +3,7 @@ import { getWeather, getCityByName } from "./API/open_weather.instance";
 import Map from "./Components/Map";
 import SearchBar from "./Components/SearchBar";
 import PopularCities from "./Components/PopularCities";
+import WeatherState from "./Components/WeatherState";
 function App() {
   getCityByName("Africa");
   return (
@@ -13,7 +14,7 @@ function App() {
           <PopularCities />
           <Map />
         </div>
-        <div className="right_side"></div>
+        <WeatherState />
       </div>
     </>
   );

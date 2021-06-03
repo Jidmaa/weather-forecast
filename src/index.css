@@ -18,6 +18,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+ul {
+  list-style-type: none;
+  margin: unset;
+  padding: unset;
+
+}
 .primary {
   color: var(--primary)
 }
@@ -64,15 +70,30 @@ code {
 .search {
   height: 3rem;
   border: unset;
+  width: 26rem;
   padding: 0 2rem;  
 }
 .search-bar {
   position: relative;
+  display: inline-flex;
   width: min-content;
 }
 .search-icon {
-
   position: relative;
-bottom: 48%;
-left: 2%;
+
+  top: 35%;
+  right: 96%;
+}
+.suggestion-item{
+  background-color: var(--secondary);
+  color: white;
+  padding: 0 2rem;
+  border-bottom: 0.5px solid white;
+  width: 26rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+}
+.suggestion-item:hover{
+  opacity: 0.5;
 }
