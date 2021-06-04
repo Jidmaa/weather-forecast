@@ -47,7 +47,6 @@ ul {
 .left_side {
   width: 70%;
   padding: 1rem 2rem;
-  background-color: var(--primary);
  display: flex;
  justify-content: space-around;
  flex-direction: column;
@@ -59,6 +58,13 @@ ul {
   background-size: cover;
   padding : 2rem 1rem;
   display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  
+    
+
+  
 }
 @media only screen and (max-width: 630px) {
   .main_frame{
@@ -109,16 +115,26 @@ ul {
   opacity: 0.5;
 }
 .weather-state {
-  font-size: 2vw;
- 
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: bold;
 }
 .weather-today {
   display: inline-flex;
   align-items: center;
+  flex: auto;
+  justify-content: center;
 }
 .weather {
   display: flex;
   flex-direction: column;
-  color:white;
+  color:var(--secondary);
+}
+.temp {
+  align-self: center ;
+  font-size: 6rem;
+  color: white;
+  font-weight: 600;
 }

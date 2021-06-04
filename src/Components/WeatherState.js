@@ -15,21 +15,74 @@ export default function WeatherState({ currentWeather }) {
       },
     },
   ];
-  const styles = {
-    backgroundImage:
-      "linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), url('https://images.unsplash.com/photo-1558418294-9da149757efe?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80')",
-  };
+
   console.log("current weather in weatherstate", currentWeather);
+  const makeDate = () => {
+    var dateObj = new Date();
+    var days = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
+    var day = dateObj.getUTCDay();
+    var date = dateObj.getUTCDate();
+    var months = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "June",
+      "July",
+      "Aug",
+      "Sept",
+      "Oct",
+      "Nov",
+      "Dec",
+    ];
+    var month = dateObj.getUTCMonth();
+    var full_date = days[day] + ", " + date + " " + months[month];
+    return full_date;
+  };
   return (
-    <div className="right_side" style={styles}>
+    <div className="right_side">
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-around",
+          cursor: "pointer",
+        }}
+      >
+        <h3 style={{ color: "white" }}> Today </h3>
+        <h3 className="primary" style={{ opacity: 0.5 }}>
+          This week
+        </h3>
+      </div>
       <div className="weather-today">
-        <Lottie options={animations[0].options} height="auto" width="auto" />
         <div className="weather">
-          <span className="weather-state">
+          <div className="weather-state">
+            <Lottie
+              options={animations[0].options}
+              height={50}
+              width={50}
+              style={{ margin: "unset" }}
+            />
+            <span>{makeDate()}</span>
+          </div>
+
+          {/* <span className="weather-state">
             {currentWeather?.current?.temp} °C,{" "}
             {currentWeather?.current?.weather[0].description}.
           </span>
-          Feels like {currentWeather?.current?.feels_like} °C.
+          Feels like {currentWeather?.current?.feels_like} °C. */}
+          {currentWeather && (
+            <>
+              {" "}
+              <div className="temp">
+                {currentWeather?.current?.temp?.substring(0, 2)} °C
+              </div>
+              <span>
+                {" "}
+                Feels like {currentWeather?.current?.feels_like} °C.{" "}
+              </span>{" "}
+            </>
+          )}
         </div>
       </div>
     </div>
