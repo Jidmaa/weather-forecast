@@ -22,11 +22,11 @@ function App() {
     <>
       <div className="main_frame">
         <div className="left_side">
+          <PopularCities />
           <SearchBar
             currentLocation={currentLocation}
             setCurrentLocation={setCurrentLocation}
           />
-          <PopularCities />
           <Map />
         </div>
         <WeatherState currentWeather={currentWeather} />

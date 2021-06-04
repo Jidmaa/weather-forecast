@@ -5,7 +5,14 @@ export default function AutoComplete({
   setSuggestedCities,
 }) {
   let regionNames = new Intl.DisplayNames(["en"], { type: "region" });
-
+  const verifyRegion = (country_code) => {
+    try {
+      regionNames.of(country_code);
+      return regionNames.of(country_code);
+    } catch {
+      return country_code;
+    }
+  };
   return (
     <>
       {suggestedCities.length !== 0 && (
@@ -20,7 +27,9 @@ export default function AutoComplete({
                 key={index}
                 className="suggestion-item"
               >
-                {city.name}, {regionNames.of(city.country)}.
+                {city.name}
+                {/* If you research a continent, the opeanweathermap API won't give a country code, so we'll show the continent's name instead */}
+                {city.country ? "," + regionNames.of(city.country) : null} .
               </li>
             ))}
           </ul>

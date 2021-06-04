@@ -5,7 +5,7 @@ export default function Map() {
       center={[51.505, -0.09]}
       zoom={13}
       scrollWheelZoom={false}
-      style={{ height: "100%" }}
+      style={{ height: "100%", marginTop: "2rem" }}
       id="mapbox.dark"
     >
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />

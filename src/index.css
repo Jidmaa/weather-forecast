@@ -41,26 +41,29 @@ ul {
 .main_frame {
   display: flex;
   height: 100vh;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .left_side {
   width: 70%;
-  padding: 2rem 4rem;
+  padding: 1rem 2rem;
   background-color: var(--primary);
  display: flex;
+ justify-content: space-around;
  flex-direction: column;
 
 }
 .right_side {
   width: 30%;
-  background-color: var(--secondary);
-  padding : 2rem 4rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding : 2rem 1rem;
   display: flex;
 }
 @media only screen and (max-width: 630px) {
   .main_frame{
     flex-direction: column;
+    
   }
   .left_side {
     height: 60vh;
@@ -83,6 +86,8 @@ ul {
   position: relative;
   width: 100%;
   display: inline-block;
+  height: 3rem;
+
 }
 .search-icon {
   position: relative;
@@ -98,8 +103,22 @@ ul {
   height: 3rem;
   display: flex;
   align-items: center;
-  margin-top: -1.2rem;
+
 }
 .suggestion-item:hover{
   opacity: 0.5;
+}
+.weather-state {
+  font-size: 2vw;
+ 
+  font-weight: bold;
+}
+.weather-today {
+  display: inline-flex;
+  align-items: center;
+}
+.weather {
+  display: flex;
+  flex-direction: column;
+  color:white;
 }
