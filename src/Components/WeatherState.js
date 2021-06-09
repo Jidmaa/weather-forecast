@@ -42,28 +42,19 @@ export default function WeatherState({ currentWeather }) {
   };
   return (
     <div className="right_side">
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-around",
-          cursor: "pointer",
-        }}
-      >
-        <h3 style={{ color: "white" }}> Today </h3>
-        <h3 className="primary" style={{ opacity: 0.5 }}>
-          This week
-        </h3>
+      <div>
+        <h1> Today </h1>
       </div>
       <div className="weather-today">
+        <Lottie
+          options={animations[0].options}
+          height={150}
+          width={150}
+          style={{ margin: "unset" }}
+        />
         <div className="weather">
           <div className="weather-state">
-            <Lottie
-              options={animations[0].options}
-              height={50}
-              width={50}
-              style={{ margin: "unset" }}
-            />
-            <span>{makeDate()}</span>
+            <span>{currentWeather?.current?.weather[0]?.main}</span>
           </div>
 
           {/* <span className="weather-state">
@@ -74,9 +65,7 @@ export default function WeatherState({ currentWeather }) {
           {currentWeather && (
             <>
               {" "}
-              <div className="temp">
-                {currentWeather?.current?.temp?.substring(0, 2)} °C
-              </div>
+              <div className="temp">{currentWeather?.current?.temp} °C</div>
               <span>
                 {" "}
                 Feels like {currentWeather?.current?.feels_like} °C.{" "}

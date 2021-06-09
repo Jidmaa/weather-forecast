@@ -1,39 +1,39 @@
 :root {
-  --primary:  #E3F6FE;
-  --secondary: #202C5B;
-  --text: #4F6796
+  --primary: #e3f6fe;
+  --secondary: #202c5b;
+  --text: #4f6796;
 }
 
 body {
   margin: 0;
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-
   font-size: 16px;
 }
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 ul {
   list-style-type: none;
   margin: unset;
   padding: unset;
-
 }
 .primary {
-  color: var(--primary)
+  color: var(--primary);
 }
-.secondary  {
-  color :var(--secondary); 
+.secondary {
+  color: var(--secondary);
 }
 .light-text {
   font-weight: 400;
@@ -47,36 +47,33 @@ ul {
 .left_side {
   width: 70%;
   padding: 1rem 2rem;
- display: flex;
- justify-content: space-around;
- flex-direction: column;
-
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  background-color: var(--primary);
+  border-radius: 0 2.5rem 2.5rem 0;
 }
 .right_side {
   width: 30%;
   background-repeat: no-repeat;
   background-size: cover;
-  padding : 2rem 1rem;
+  padding: 2rem 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-
-  
-    
-
-  
+  height: max-content;
+  background-color: white;
 }
 @media only screen and (max-width: 630px) {
-  .main_frame{
+  .main_frame {
     flex-direction: column;
-    
   }
   .left_side {
     height: 60vh;
     width: unset;
     padding: 2rem 1rem;
   }
-  .right_side{
+  .right_side {
     height: 40vh;
     width: unset;
   }
@@ -84,7 +81,7 @@ ul {
 .search {
   height: 3rem;
   border: unset;
-  padding: 0 2rem;  
+  padding: 0 2rem;
   width: 100%;
 }
 
@@ -93,14 +90,13 @@ ul {
   width: 100%;
   display: inline-block;
   height: 3rem;
-
 }
 .search-icon {
   position: relative;
   top: -2rem;
   right: -0.5rem;
 }
-.suggestion-item{
+.suggestion-item {
   background-color: var(--secondary);
   color: white;
   padding: 0 2rem;
@@ -109,32 +105,33 @@ ul {
   height: 3rem;
   display: flex;
   align-items: center;
-
 }
-.suggestion-item:hover{
+.suggestion-item:hover {
   opacity: 0.5;
 }
 .weather-state {
-  font-size: 0.8rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
 }
 .weather-today {
   display: inline-flex;
   align-items: center;
   flex: auto;
   justify-content: center;
+  box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.09);
+  border-radius: 1rem;
+  height: max-content;
+  padding: 3rem 1rem;
 }
 .weather {
   display: flex;
   flex-direction: column;
-  color:var(--secondary);
+  color: black;
+  align-items: baseline;
 }
 .temp {
-  align-self: center ;
-  font-size: 6rem;
-  color: white;
+  font-size: 2rem;
+  color: black;
   font-weight: 600;
 }
