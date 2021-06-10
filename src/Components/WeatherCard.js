@@ -1,12 +1,13 @@
 import { FiEye, FiDroplet, FiWind, FiThermometer } from "react-icons/fi";
 import Lottie from "react-lottie";
-import animationData from "../sunny.json";
+import sunnyAnimation from "../sunny.json";
+import rainyAnimation from "../rainy.json";
 export default function WeatherCard({ currentWeather }) {
   const animations = [
     {
       name: "Sunny",
       options: {
-        animationData,
+        animationData: sunnyAnimation,
         loop: true,
         autoplay: true,
         rendererSettings: {
