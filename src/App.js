@@ -41,22 +41,24 @@ function App() {
       >
         <div className="left_side">
           <PopularCities />
-          <SearchBar
-            setCurrentLocation={setCurrentLocation}
-            setCurrentCity={setCurrentCity}
-            makeCityName={makeCityName}
-          />
           <Map
             setCurrentLocation={setCurrentLocation}
             setCurrentCity={setCurrentCity}
             currentLocation={currentLocation}
           />
         </div>
-        <WeatherState
-          currentWeather={currentWeather}
-          currentLocation={currentLocation}
-          currentCity={currentCity}
-        />
+        <div className="right_side">
+          <SearchBar
+            setCurrentLocation={setCurrentLocation}
+            setCurrentCity={setCurrentCity}
+            makeCityName={makeCityName}
+          />
+          <WeatherState
+            currentWeather={currentWeather}
+            currentLocation={currentLocation}
+            currentCity={currentCity}
+          />
+        </div>
       </div>
     </>
   );

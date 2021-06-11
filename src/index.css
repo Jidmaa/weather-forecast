@@ -67,7 +67,7 @@ ul {
 }
 @media only screen and (max-width: 1360px) {
   .main_frame {
-    flex-direction: column;
+    display: block;
   }
   .left_side {
     height: 60vh;
@@ -96,6 +96,7 @@ ul {
   position: relative;
   top: -2rem;
   right: -0.5rem;
+  color: black;
 }
 .suggestion-item {
   background-color: var(--secondary);

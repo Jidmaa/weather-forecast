@@ -44,12 +44,12 @@ export default function Map({
   }
 
   return (
-    <div style={{ height: "65vh" }}>
+    <div style={{ height: "100%" }}>
       <MapContainer
         center={markers[0]}
         zoom={13}
         scrollWheelZoom={true}
-        style={{ height: "100%", marginTop: "2rem" }}
+        style={{ height: "100%" }}
         id="mapbox.dark"
       >
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />

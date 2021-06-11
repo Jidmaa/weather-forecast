@@ -35,7 +35,7 @@ export default function WeatherState({ currentWeather, currentCity }) {
     return full_date;
   };
   return (
-    <div className="right_side">
+    <>
       <h1 style={{ alignSelf: "center" }}> {currentCity}</h1>
       <div>
         <h1> Today </h1>
@@ -54,6 +54,6 @@ export default function WeatherState({ currentWeather, currentCity }) {
         ))}
       </Slider>
       {/* </div> */}
-    </div>
+    </>
   );
 }
