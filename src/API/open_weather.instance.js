@@ -19,3 +19,13 @@ export const getCityByName = (city) => {
       return res.data;
     });
 };
+export const getCityByCoordinates = (lon, lat) => {
+  return axios
+    .get(
+      `http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=5&appid=${process.env.REACT_APP_WEATHER_API_KEY}`
+    )
+    .then((res) => {
+      console.log(res.data);
+      return res.data;
+    });
+};

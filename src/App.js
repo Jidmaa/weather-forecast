@@ -35,7 +35,11 @@ function App() {
             setCurrentLocation={setCurrentLocation}
             setCurrentCity={setCurrentCity}
           />
-          <Map setCurrentLocation={setCurrentLocation} />
+          <Map
+            setCurrentLocation={setCurrentLocation}
+            setCurrentCity={setCurrentCity}
+            currentLocation={currentLocation}
+          />
         </div>
         <WeatherState
           currentWeather={currentWeather}

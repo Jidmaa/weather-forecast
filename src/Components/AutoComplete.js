@@ -19,9 +19,7 @@ export default function AutoComplete({
                   setSuggestedCities([]);
                   setCurrentCity(
                     city.name +
-                      (city.country
-                        ? ", " + regionNames.of(city.country)
-                        : null)
+                      (city.country ? ", " + regionNames.of(city.country) : "")
                   );
                 }}
                 key={index}
