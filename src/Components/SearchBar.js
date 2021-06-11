@@ -3,7 +3,11 @@ import { useState } from "react";
 import { getCityByName } from "../API/open_weather.instance";
 import AutoComplete from "./AutoComplete";
 
-export default function SearchBar({ setCurrentLocation, setCurrentCity }) {
+export default function SearchBar({
+  setCurrentLocation,
+  setCurrentCity,
+  makeCityName,
+}) {
   const [suggestedCities, setSuggestedCities] = useState([]);
   const [hint, setHint] = useState(null);
   const validateInput = (e) => {
@@ -34,6 +38,7 @@ export default function SearchBar({ setCurrentLocation, setCurrentCity }) {
         setCurrentLocation={setCurrentLocation}
         setSuggestedCities={setSuggestedCities}
         setCurrentCity={setCurrentCity}
+        makeCityName={makeCityName}
       />
     </>
   );

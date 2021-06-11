@@ -3,6 +3,7 @@ export default function AutoComplete({
   hint,
   setCurrentLocation,
   setSuggestedCities,
+  makeCityName,
   setCurrentCity,
 }) {
   let regionNames = new Intl.DisplayNames(["en"], { type: "region" });

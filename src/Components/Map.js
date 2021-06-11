@@ -13,7 +13,6 @@ export default function Map({
   setCurrentCity,
   currentLocation,
 }) {
-  let regionNames = new Intl.DisplayNames(["en"], { type: "region" });
   const [markers, setMarkers] = useState([
     { lat: currentLocation.lat, lng: currentLocation.lon },
   ]);

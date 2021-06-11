@@ -11,8 +11,8 @@ export default function WeatherState({ currentWeather, currentCity }) {
     slidesToShow: 2,
     slidesToScroll: 2,
   };
-  const makeDate = () => {
-    var dateObj = new Date();
+  const makeDate = (date) => {
+    var dateObj = new Date(new Date().setDate(new Date().getDate() + 1 + date));
     var days = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
     var day = dateObj.getUTCDay();
     var date = dateObj.getUTCDate();
@@ -45,7 +45,12 @@ export default function WeatherState({ currentWeather, currentCity }) {
       {/* <div className="weekly-cards"> */}
       <Slider {...settings}>
         {currentWeather?.daily.map((weather, index) => (
-          <WeatherCard key={index} weather={weather} details={false} />
+          <WeatherCard
+            key={index}
+            weather={weather}
+            details={false}
+            date={makeDate(index)}
+          />
         ))}
       </Slider>
       {/* </div> */}

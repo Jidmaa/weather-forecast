@@ -2,8 +2,9 @@ import { FiEye, FiDroplet, FiWind, FiThermometer } from "react-icons/fi";
 import Lottie from "react-lottie";
 import sunnyAnimation from "../sunny.json";
 import rainyAnimation from "../rainy.json";
-export default function WeatherCard({ weather, details }) {
+export default function WeatherCard({ weather, details, date }) {
   console.log("weather in weather card", weather);
+
   const animations = [
     {
       name: "Sunny",
@@ -27,6 +28,7 @@ export default function WeatherCard({ weather, details }) {
           style={{ margin: "unset" }}
         />
         <div className="weather">
+          <span> {date && date}</span>
           <div className="weather-state">
             <span>{weather?.weather[0]?.main}</span>
           </div>
@@ -57,6 +59,7 @@ export default function WeatherCard({ weather, details }) {
           )}
         </div>
       </div>
+
       {details && (
         <div className=" weather-properties fade-in small">
           <span className="weather-property">
