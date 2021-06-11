@@ -14,7 +14,9 @@ export default function Map({
   currentLocation,
 }) {
   let regionNames = new Intl.DisplayNames(["en"], { type: "region" });
-  const [markers, setMarkers] = useState([{ lat: 51.505, lng: -0.09 }]);
+  const [markers, setMarkers] = useState([
+    { lat: currentLocation.lat, lng: currentLocation.lon },
+  ]);
   useEffect(() => {
     setMarkers([{ lat: currentLocation.lat, lng: currentLocation.lon }]);
   }, [currentLocation.lat, currentLocation.lon]);
@@ -30,17 +32,6 @@ export default function Map({
         setMarkers([newMarker]);
         console.log("hey");
         setCurrentLocation({ lat: newMarker.lat, lon: newMarker.lng });
-        getCityByCoordinates(newMarker.lng, newMarker.lat)
-          .then((city) => {
-            console.log("CITYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY", city);
-            setCurrentCity(
-              city[0].name +
-                (city[0].country
-                  ? ", " + regionNames.of(city[0].country)
-                  : null)
-            );
-          })
-          .catch(() => setCurrentCity("Unkown"));
       },
     });
 
@@ -56,7 +47,7 @@ export default function Map({
   return (
     <div style={{ height: "65vh" }}>
       <MapContainer
-        center={[51.505, -0.09]}
+        center={markers[0]}
         zoom={13}
         scrollWheelZoom={true}
         style={{ height: "100%", marginTop: "2rem" }}

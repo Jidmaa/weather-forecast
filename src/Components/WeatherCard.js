@@ -58,7 +58,7 @@ export default function WeatherCard({ weather, details }) {
         </div>
       </div>
       {details && (
-        <div className=" weather-properties small">
+        <div className=" weather-properties fade-in small">
           <span className="weather-property">
             <FiDroplet className="property-icon" /> Humidity :{" "}
             {weather?.humidity} %{" "}

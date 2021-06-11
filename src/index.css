@@ -158,6 +158,7 @@ margin: 1rem;}
   grid-template-areas: 
     ". ."
     ". .";
+    
 }
 .weather-property {
   display: flex;  

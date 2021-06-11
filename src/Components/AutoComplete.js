@@ -17,10 +17,6 @@ export default function AutoComplete({
                 onClick={() => {
                   setCurrentLocation({ lon: city.lon, lat: city.lat });
                   setSuggestedCities([]);
-                  setCurrentCity(
-                    city.name +
-                      (city.country ? ", " + regionNames.of(city.country) : "")
-                  );
                 }}
                 key={index}
                 className="suggestion-item"
