@@ -11,6 +11,7 @@ function App() {
     lat: 64.0003,
     lon: -150.0,
   });
+  const [currentCity, setCurrentCity] = useState("Mostaganem, Algeria");
   const [currentWeather, setCurrentWeather] = useState(null);
   useEffect(
     () =>
@@ -31,12 +32,16 @@ function App() {
         <div className="left_side">
           <PopularCities />
           <SearchBar
-            currentLocation={currentLocation}
             setCurrentLocation={setCurrentLocation}
+            setCurrentCity={setCurrentCity}
           />
-          <Map />
+          <Map setCurrentLocation={setCurrentLocation} />
         </div>
-        <WeatherState currentWeather={currentWeather} />
+        <WeatherState
+          currentWeather={currentWeather}
+          currentLocation={currentLocation}
+          currentCity={currentCity}
+        />
       </div>
     </>
   );

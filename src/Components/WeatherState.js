@@ -1,6 +1,16 @@
 import WeatherCard from "./WeatherCard";
-export default function WeatherState({ currentWeather }) {
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+export default function WeatherState({ currentWeather, currentCity }) {
   console.log("current weather in weatherstate", currentWeather);
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 2,
+    slidesToScroll: 2,
+  };
   const makeDate = () => {
     var dateObj = new Date();
     var days = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
@@ -26,13 +36,19 @@ export default function WeatherState({ currentWeather }) {
   };
   return (
     <div className="right_side">
+      <h1 style={{ alignSelf: "center" }}> {currentCity}</h1>
       <div>
         <h1> Today </h1>
       </div>
-      <WeatherCard currentWeather={currentWeather} />
-      <div>
-        <h1> This week </h1>
-      </div>
+      <WeatherCard weather={currentWeather?.current} details={true} />
+      <h1> This week </h1>
+      {/* <div className="weekly-cards"> */}
+      <Slider {...settings}>
+        {currentWeather?.daily.map((weather, index) => (
+          <WeatherCard key={index} weather={weather} details={false} />
+        ))}
+      </Slider>
+      {/* </div> */}
     </div>
   );
 }
