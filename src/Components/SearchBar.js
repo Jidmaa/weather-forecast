@@ -7,6 +7,7 @@ export default function SearchBar({
   setCurrentLocation,
   setCurrentCity,
   makeCityName,
+  currentCity,
 }) {
   const [suggestedCities, setSuggestedCities] = useState([]);
   const [hint, setHint] = useState(null);
@@ -22,7 +23,7 @@ export default function SearchBar({
       });
   };
   return (
-    <>
+    <div className="right-side-heading">
       <div className="search-bar">
         <input
           type="text"
@@ -40,6 +41,7 @@ export default function SearchBar({
         setCurrentCity={setCurrentCity}
         makeCityName={makeCityName}
       />
-    </>
+      <h1 className="city-name"> {currentCity}</h1>
+    </div>
   );
 }

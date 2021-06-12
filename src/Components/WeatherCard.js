@@ -1,28 +1,28 @@
 import { FiEye, FiDroplet, FiWind, FiThermometer } from "react-icons/fi";
 import Lottie from "react-lottie";
-import sunnyAnimation from "../sunny.json";
-import rainyAnimation from "../rainy.json";
+
+import { generateIconFromWeather, animations } from "../Utils/utils_functions";
 export default function WeatherCard({ weather, details, date }) {
   console.log("weather in weather card", weather);
 
-  const animations = [
-    {
-      name: "Sunny",
-      options: {
-        animationData: sunnyAnimation,
-        loop: true,
-        autoplay: true,
-        rendererSettings: {
-          preserveAspectRatio: "xMaxYMax slice",
-        },
-      },
-    },
-  ];
+  console.log(
+    animations.filter(
+      (animation) =>
+        animation.name == generateIconFromWeather(weather?.weather[0]?.id)
+    )
+  );
+  console.log(generateIconFromWeather(weather?.weather[0]?.id));
   return (
-    <div className="card" style={{ marginRight: "1rem" }}>
-      <div className={details ? "weather-today" : "weather-today small"}>
+    <div className={"card " + (!details && "mr")}>
+      <div className={"weather-today " + (!details && "small")}>
         <Lottie
-          options={animations[0].options}
+          options={
+            animations.filter(
+              (animation) =>
+                animation.name ==
+                generateIconFromWeather(weather?.weather[0]?.id)
+            )[0].options
+          }
           height={details ? 150 : 60}
           width={details ? 150 : 60}
           style={{ margin: "unset" }}
@@ -61,7 +61,7 @@ export default function WeatherCard({ weather, details, date }) {
       </div>
 
       {details && (
-        <div className=" weather-properties fade-in small">
+        <div className=" weather-properties small">
           <span className="weather-property">
             <FiDroplet className="property-icon" /> Humidity :{" "}
             {weather?.humidity} %{" "}

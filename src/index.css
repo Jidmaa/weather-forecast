@@ -40,7 +40,6 @@ ul {
 }
 .main_frame {
   display: flex;
-  height: 100vh;
   justify-content: space-between;
 }
 
@@ -63,7 +62,7 @@ ul {
   height: 100%;
   background-color: var(--secondary);
   color:white;
-  
+  min-height: 100vh;
 }
 @media only screen and (max-width: 1360px) {
   .main_frame {
@@ -98,9 +97,12 @@ ul {
   right: -0.5rem;
   color: black;
 }
+.suggestions {
+  margin-bottom: auto;
+}
 .suggestion-item {
-  background-color: var(--secondary);
-  color: white;
+  background-color: var(--primary);
+  color: var(--secondary);
   padding: 0 2rem;
   border-bottom: 0.5px solid white;
   width: 100%;
@@ -110,6 +112,7 @@ ul {
 }
 .suggestion-item:hover {
   opacity: 0.5;
+  cursor: pointer;
 }
 .weather-state {
   display: flex;
@@ -172,4 +175,21 @@ margin: 1rem;}
 .weekly-cards {
   display: flex;
   justify-content: space-around;
+}
+.mr {
+  margin-right: 1rem;
+}
+.slick-dots li button:before {
+  color: white !important;
+}
+.slick-dots li.slick-active button:before {
+  color:white !important;
+}
+.right-side-heading {
+  display: flex;
+  flex-direction: column;
+}
+.city-name {
+  align-self: center;
+  text-align: center;
 }
