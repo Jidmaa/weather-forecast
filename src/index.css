@@ -55,7 +55,7 @@ ul {
   width: 30%;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 3rem 3rem;
+  padding: 1rem 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -64,18 +64,36 @@ ul {
   color:white;
   min-height: 100vh;
 }
-@media only screen and (max-width: 1360px) {
+.mr {
+  margin-right: 1rem;
+}
+@media only screen and (max-width: 1024px) {
+.right_side{
+  width: 40%;
+  padding: 1rem 1.5rem;
+}
+}
+@media only screen and (max-width: 768px) {
   .main_frame {
     display: block;
   }
   .left_side {
-    height: 60vh;
+    height: 100vh;
     width: unset;
     padding: 2rem 1rem;
   }
   .right_side {
     height: max-content;
     width: unset;
+    padding: 2rem 1.5rem;
+
+  }
+  .mr{
+    margin-right: 0.5rem;
+  }
+  .column {
+    display: flex;
+    flex-direction: column;
   }
 }
 .search {
@@ -176,9 +194,7 @@ margin: 1rem;}
   display: flex;
   justify-content: space-around;
 }
-.mr {
-  margin-right: 1rem;
-}
+
 .slick-dots li button:before {
   color: white !important;
 }

@@ -1,5 +1,7 @@
 export default function PopularCities() {
   // TODO: Several carts with popular cities
+  // For now it just has the title of the project
+
   const cities = [
     {
       city: "Berlin",

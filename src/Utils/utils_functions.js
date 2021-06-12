@@ -5,6 +5,9 @@ import thunderAnimation from "../Utils/thunderstorm.json";
 import snowAnimation from "../Utils/snow.json";
 import windAnimation from "../Utils/wind.json";
 import cloudAnimation from "../Utils/clouds.json";
+
+// A function that makes a date with UTC format to show like "Sun, 24 June"
+
 export const makeDate = (date) => {
   var dateObj = new Date(new Date().setDate(new Date().getDate() + 1 + date));
   var days = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
@@ -28,6 +31,9 @@ export const makeDate = (date) => {
   var full_date = days[day] + ", " + dateNum + " " + months[month];
   return full_date;
 };
+
+// Gives the weather name according to the openweathermap IDs in order to choose a Lottie animation when rendering the card
+
 export const generateIconFromWeather = (id) => {
   switch (true) {
     case id >= 200 && id < 300:
@@ -48,6 +54,7 @@ export const generateIconFromWeather = (id) => {
       return "Clear";
   }
 };
+// The list of animations, Can be more in the future !
 export const animations = [
   {
     name: "Clear",
@@ -127,10 +134,12 @@ export const animations = [
     },
   },
 ];
+
+// If you research a continent, the opeanweathermap API won't give a country code, so we'll show the continent's name instead
+
 export const makeCityName = (city) => {
   let regionNames = new Intl.DisplayNames(["en"], { type: "region" });
   return (
-    city[0].name +
-    (city[0].country ? ", " + regionNames.of(city[0].country) : null)
+    city.name + (city.country ? ", " + regionNames.of(city.country) : null)
   );
 };

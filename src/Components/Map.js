@@ -22,6 +22,17 @@ export default function Map({ setCurrentLocation, currentLocation }) {
 
   useEffect(() => {
     setMarkers([{ lat: currentLocation.lat, lng: currentLocation.lon }]);
+
+    // In mobile/tablet, sroll down to the weather card once a location is selected
+
+    setTimeout(
+      () =>
+        window.innerWidth < 770 &&
+        document
+          .getElementById("big-card")
+          .scrollIntoView({ behavior: "smooth" }),
+      500
+    );
   }, [currentLocation.lat, currentLocation.lon]);
 
   // Marker component that updates the marker and current location on click

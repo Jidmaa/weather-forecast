@@ -3,7 +3,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { makeDate } from "../Utils/utils_functions";
-export default function WeatherState({ currentWeather, currentCity }) {
+
+export default function WeatherState({ currentWeather }) {
+  // Using the slick library to get a nice slider for the weekly weather
   const settings = {
     dots: true,
     infinite: false,
@@ -12,7 +14,6 @@ export default function WeatherState({ currentWeather, currentCity }) {
     slidesToScroll: 2,
     dotsClass: "slick-dots white",
   };
-
   return (
     <>
       <div>
@@ -21,7 +22,6 @@ export default function WeatherState({ currentWeather, currentCity }) {
       </div>
       <div>
         <h1> This week </h1>
-        {/* <div className="weekly-cards"> */}
         <Slider {...settings}>
           {currentWeather?.daily.map((weather, index) => (
             <WeatherCard

@@ -32,13 +32,14 @@ function App() {
       setCurrentWeather(weather);
     };
     getCurrentWeather();
+
     const getCurrentCityByCoordinates = async () => {
       try {
         const city = await getCityByCoordinates(
           currentLocation.lon,
           currentLocation.lat
         );
-        setCurrentCity(makeCityName(city));
+        setCurrentCity(makeCityName(city[0]));
       } catch (err) {
         setCurrentCity("Unkown");
       }
@@ -65,11 +66,7 @@ function App() {
             makeCityName={makeCityName}
             currentCity={currentCity}
           />
-          <WeatherState
-            currentWeather={currentWeather}
-            currentLocation={currentLocation}
-            currentCity={currentCity}
-          />
+          <WeatherState currentWeather={currentWeather} />
         </div>
       </div>
     </>
