@@ -8,13 +8,13 @@ export const getWeather = async (lat, lon) => {
 };
 export const getCityByName = async (city) => {
   const res = await axios.get(
-    `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=3&appid=${process.env.REACT_APP_WEATHER_API_KEY}`
+    `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=3&appid=${process.env.REACT_APP_WEATHER_API_KEY}`
   );
   return res.data;
 };
 export const getCityByCoordinates = async (lon, lat) => {
   const res = await axios.get(
-    `http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=5&appid=${process.env.REACT_APP_WEATHER_API_KEY}`
+    `https://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=5&appid=${process.env.REACT_APP_WEATHER_API_KEY}`
   );
   return res.data;
 };
