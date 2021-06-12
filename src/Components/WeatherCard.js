@@ -3,15 +3,6 @@ import Lottie from "react-lottie";
 
 import { generateIconFromWeather, animations } from "../Utils/utils_functions";
 export default function WeatherCard({ weather, details, date }) {
-  console.log("weather in weather card", weather);
-
-  console.log(
-    animations.filter(
-      (animation) =>
-        animation.name == generateIconFromWeather(weather?.weather[0]?.id)
-    )
-  );
-  console.log(generateIconFromWeather(weather?.weather[0]?.id));
   return (
     <div className={"card " + (!details && "mr")}>
       <div className={"weather-today " + (!details && "small")}>

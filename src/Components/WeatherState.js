@@ -4,7 +4,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { makeDate } from "../Utils/utils_functions";
 export default function WeatherState({ currentWeather, currentCity }) {
-  console.log("current weather in weatherstate", currentWeather);
   const settings = {
     dots: true,
     infinite: false,

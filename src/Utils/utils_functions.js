@@ -29,7 +29,6 @@ export const makeDate = (date) => {
   return full_date;
 };
 export const generateIconFromWeather = (id) => {
-  console.log("this is id in choosegradient", id);
   switch (true) {
     case id >= 200 && id < 300:
       return "Thunderstorm";

@@ -13,7 +13,9 @@ function App() {
     lat: 51.505,
     lon: -0.09,
   });
-
+  useEffect(() => {
+    console.log("running useeffect");
+  }, []);
   // Placeholder when openweathermap API doesn't find the city name (or when the API key is invalid)
 
   const [currentCity, setCurrentCity] = useState("Unkown");
