@@ -1,5 +1,8 @@
 # Weather Forecast App 
 A Weather App Done with ReactJS through the OpenWeatherMap API to get the Weather and Cities, and the React Leaflet library for the map. 
+
+<img src="screen.png"/>
+
 ## How To run 
 Simply execute npm start, make sure you have a .enb file with the variable REACT_APP_WEATHER_API_KEY that has the value of your own OpenWeatherMap API Key. 
 ## Functionnalities
